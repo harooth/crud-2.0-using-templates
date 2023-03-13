@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<!-- <div class="loader">
+
+		<div id="loading"></div>
+		<h3>Loading...</h3>
+	</div> -->
+
+	
+		<% if(data){ %>
+		<h1>Database content</h1>
+		<table border="1px" id="table">
+			<!-- esi petqa hanel stexic -->
+			<tr>
+				<td><b>Id</b></td>
+				<td><b>Name</b></td>
+				<td><b>Email</b></td>
+				<td><b>Password</b></td>
+				<td colspan="2">Action</td>
+			</tr>
+		<% data.forEach(el=>{ %>
+			<tr>
+				<td><a href="/single/<%=el.id%>"><%=el.id%></a></td>
+				<td><%=el.name%></td>
+				<td><%=el.email%></td>
+				<td><%=el.password%></td>
+				<td><a href="/delete/<%=el.id%>">Delete</a></td>
+				<td><a href="/update/<%=el.id%>">Update</a></td>
+			</tr>
+
+		
+		<% }) %>
+		</table>
+		<br>
+		<a href="/create">New post</a>
+		<% } %>
+		
+	
+</body>
+
+
+</html>
